@@ -1,0 +1,16 @@
+{
+  "extends": "eslint:recommended",
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "no-console": 0
+  },
+  "ecmaFeatures": {
+    "blockBindings": true,
+    "forOf": true,
+    "generators": true,
+    "templateStrings": true,
+    "classes": true
+  }
+}

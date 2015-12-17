@@ -1,0 +1,28 @@
+{
+  "name": "koa-meta-error",
+  "version": "1.0.0",
+  "description": "Adds error related metadata to a KOA response",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "KOA",
+    "metadata",
+    "response",
+    "error"
+  ],
+  "author": "Daniel Kennedy",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danwkennedy/koa-meta-response"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
+  },
+  "dependencies": {
+    "lodash": "^3.10.1"
+  }
+}
