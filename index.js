@@ -1,7 +1,3 @@
-'use strict';
-
-let _ = require('lodash');
-
 /**
  * errorHandler - Format the body for an error response.
  *
@@ -11,24 +7,24 @@ let _ = require('lodash');
  * @param  {type} next description
  * @return {undefined}
  */
-module.exports = function *errorHandler(next) {
+module.exports = async function errorHandler(ctx, next) {
     try {
-        yield next;
+        await next();
     } catch (err) {
         if (err.status < 400 || err.status >= 500 || !err.status) {
             throw err;
         }
 
-        this.status = err.status;
+        ctx.response.status = err.status;
 
         let response = {
           title: err.message
         };
 
         if (err.details) {
-          response = _.merge(response, err.details);
+          response = Object.assign(response, err.details);
         }
 
-        this.body = response;
+        ctx.response.body = response;
     }
 };
